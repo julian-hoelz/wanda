@@ -1,0 +1,42 @@
+RewriteEngine On    # Aktiviert das Umschreiben von URLs
+
+
+
+##### Entfernen der Endung ".php"
+
+# Prüfen, ob die Anfrage nicht tatsächlich ein Verzeichnis ist
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Prüfen, ob die Anfrage nicht tatsächlich eine Datei ist
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+# Umschreiben der Anfrage, um .php-Dateien zu verarbeiten
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
+
+
+##### Umleitung zur Seite "index", wenn das Stammverzeichnis "wanda" eingegeben wird
+
+# Bedingung: Wenn die Anfrage an die Root-URL geht (kein spezifischer Pfad)
+RewriteCond %{REQUEST_URI} ^/$
+
+# Umschreibregel: Leitet den Benutzer zur Seite "index" weiter
+RewriteRule ^$ /index [L]
+
+
+
+##### Umleitung zur Ausbildungsnachweis-Liste, wenn der Benutzer ein Verzeichnis ("ausbilder-bereich" oder "azubi-bereich")
+
+# Regel für "azubi-bereich"
+RewriteCond %{REQUEST_URI} ^/wanda/azubi-bereich/?$ [NC]
+RewriteRule ^(.*)$ /wanda/azubi-bereich/an-liste [R=302,L]
+
+# Regel für "ausbilder-bereich"
+RewriteCond %{REQUEST_URI} ^/wanda/ausbilder-bereich/?$ [NC]
+RewriteRule ^(.*)$ /wanda/ausbilder-bereich/an-liste [R=302,L]
+
+
+
+#####
+
+ErrorDocument 403 /seitenzugriff-verweigert.php

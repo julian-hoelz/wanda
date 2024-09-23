@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trix-Editor im Lesemodus</title>
+    <!-- Einbindung von Trix CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.css">
+    <!-- CSS-Anpassungen für Lesemodus -->
+    <style>
+        /* Eingabebereich des Trix-Editors im Lesemodus */
+        .trix-editor.read-only {
+            background-color: #f5f5f5; /* Hellgrauer Hintergrund */
+            color: #333; /* Dunkler Text */
+            border: 1px solid #ddd; /* Rahmen */
+            padding: 10px;
+            overflow: hidden; /* Verhindert das Scrollen */
+            cursor: default; /* Zeigt den Standardzeiger an */
+        }
+
+        /* Toolbar im Lesemodus verstecken */
+        .trix-editor.read-only .trix-toolbar {
+            display: none; /* Toolbar ausblenden */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Trix-Editor im Lesemodus</h1>
+
+    <!-- Trix-Editor im Lesemodus -->
+    <trix-editor input="editor-content" class="read-only" readonly></trix-editor>
+    <input id="editor-content" type="hidden" name="content" value="Hier steht der Text des Trix-Editors.">
+
+    <!-- Einbindung von Trix JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einfacher Trix-Editor</title>
+    <!-- Einbindung von Trix CSS -->
+    <link rel="stylesheet" href="trix.css">
+    <!-- Einfache CSS-Anpassungen -->
+    <style>
+        trix-editor {
+            min-height: 20px; /* Höhe des Editors */
+            /* border: 5px solid blue; /* Rahmen um den Editor */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Einfacher Trix-Editor</h1>
+
+    <!-- Trix-Editor -->
+    <trix-editor input="editor-content"></trix-editor>
+    <input id="editor-content" type="hidden" name="content">
+
+    <!-- Einbindung von Trix JavaScript -->
+    <script src="trix.js"></script>
+</body>
+</html>
