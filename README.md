@@ -1,6 +1,6 @@
 # Wanda
 
-[To the Wanda page on my portfolio website](https://julian-hoelz.github.io/wanda.html?lang=en)
+[To the **Wanda** page on my portfolio website](https://julian-hoelz.github.io/wanda.html?lang=en)
 
 ## Description
 
